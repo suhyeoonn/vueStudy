@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">        
+        <child-component v-bind:propsdata="message" v-on:btn-click="showAlert"></child-component>
+    </div>
+    <script>                
+        var myComponent = {
+            template: '<button v-on:click="btnClick">{{propsdata}}</button>',
+            props: ['propsdata'],
+            methods: {
+                btnClick: function() {
+                    this.$emit('btn-click')
+                }
+            }
+        }
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'VUE'
+            },
+            components: {
+                'child-component': myComponent
+            },
+            methods: {
+                showAlert: function() {
+                    alert('btn click!')
+                }
+            }
+        })
+    </script>
+</body>
+</html>
