@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>    
+</head>
+<body>
+    <div id="app">
+        <div>
+            <p>번호: {{code1.split("_")[2]}}</p>
+            <p>코드: {{code1}}</p>
+        </div>   
+        <div>
+            <p>번호: {{code2.split("_")[2]}}</p>
+            <p>코드: {{code2}}</p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>        
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                code1: 'code_A_1',
+                code2: 'code_A_2'
+            }            
+        })
+    </script>
+</body>
+</html>
