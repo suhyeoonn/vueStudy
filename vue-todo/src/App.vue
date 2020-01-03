@@ -2,7 +2,7 @@
   <div id="app">
     <TodoHeader></TodoHeader>
     <TodoInput v-on:addTodo="addTodo"></TodoInput>
-    <TodoList :propsdata="todoItems" v-on:removeTodo="removeItem"></TodoList>
+    <TodoList :propsdata="todoItems" v-on:removeTodo="removeItem" @updateTodo="updateItem"></TodoList>
     <TodoFooter v-on:clearTodo="clearTodo"></TodoFooter>
   </div>
 </template>
@@ -27,7 +27,7 @@ export default {
   methods: {
     addTodo(todoItem) {
       localStorage.setItem(todoItem, todoItem)
-      this.todoItems.push(todoItem)
+      this.todoItems.push({key: todoItem, value: todoItem})
     },
     clearTodo() {
       localStorage.clear()
@@ -36,12 +36,19 @@ export default {
     removeItem(todoItem, index) {
       localStorage.removeItem(todoItem)
       this.todoItems.splice(index, 1)
+    },
+    updateItem(index, value) {
+      localStorage.setItem(localStorage.key(index), value)      
+      this.todoItems[index].value = value
     }
   },
   created() {
     if (localStorage.length > 0) {
         for(var i = 0; i < localStorage.length; i++) {
-            this.todoItems.push(localStorage.key(i))
+            this.todoItems.push({
+              key: localStorage.key(i),
+              value: localStorage.getItem(localStorage.key(i))
+            })
         }
     }
   }
