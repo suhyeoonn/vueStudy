@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <list-header @add-item="addItem"></list-header>
+        <list v-bind:propsdata="list"></list>        
+    </div>
+    <script>
+        var list = {
+            props: ['propsdata'],
+            template: `<ul >
+                    <li v-for="item in propsdata">{{item}}</li>
+                </ul>`
+        }
+        var listHeader = {
+            template: `<div>
+                    <input type="text">
+                    <button @click="addItem">ADD</button>
+                </div>`,
+            methods: {
+                addItem: function() {
+                    this.$emit('add-item', 'add')
+                }
+            }
+        }
+               
+        new Vue({
+            el: '#app',
+            data: {
+                list: ['A']
+            },
+            components: {
+                'list': list,
+                'list-header': listHeader
+            },
+            methods: {
+                addItem: function(item) {
+                    this.list.push(item)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

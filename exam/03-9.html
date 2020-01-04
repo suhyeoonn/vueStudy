@@ -16,7 +16,7 @@
             template: '<button v-on:click="btnClick">{{propsdata}}</button>',
             props: ['propsdata'],
             methods: {
-                btnClick: function() {
+                btnClick: function() {                    
                     this.$emit('btn-click')
                 }
             }
@@ -32,6 +32,7 @@
             methods: {
                 showAlert: function() {
                     alert('btn click!')
+                    this.message = "btn Click"
                 }
             }
         })

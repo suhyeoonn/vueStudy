@@ -9,24 +9,24 @@
 </head>
 <body>
     <div id="app">
-        <child-component v-bind:propsdata="message"></child-component>
-        <sibling-component v-bind:propsdata="anotherMessage"></sibling-component>
+        <list v-bind:propsdata="list"></list>        
     </div>
     <script>
-        Vue.component('child-component', {
+        myComponent = {
             props: ['propsdata'],
-            template: '<p>{{propsdata}}</p>'
-        })
-        Vue.component('sibling-component', {
-            template: '<p>{{propsdata}}</p>',
-            props: ['propsdata']
-        })
+            template: `<ul >
+                    <li>{{propsdata[0]}}</li>
+                </ul>`
+        }
+               
         new Vue({
             el: '#app',
             data: {
-                message: 'Hello!',
-                anotherMessage: 'Vue!'
-            }
+                list: ['A']
+            },
+            components: {
+                'list': myComponent
+            },
         })
     </script>
 </body>
