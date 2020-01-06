@@ -21,16 +21,14 @@
 
 <body>
     <div id="app">
-        <input type="password" :class="passwd ? successClass : failClass" v-model="passwd">
+        <input type="password" :class="passwd ? 'success' : 'fail'" v-model="passwd">
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
         new Vue({
             el: '#app',
             data: {                
-                passwd: '',
-                successClass: 'success',
-                failClass: 'fail'
+                passwd: ''
             }
         })
     </script>
