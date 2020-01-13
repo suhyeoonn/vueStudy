@@ -14,13 +14,14 @@ import Links from './components/Links.vue'
 import Plugins from './components/Plugins.vue'
 import Ecosystem from './components/Ecosystem'
 
+//es6 문법
 export default {
   name: 'app',
   components: {
     HelloWorld,
     Links,
-    Plugins,
-    Ecosystem
+    Plugins: Plugins,
+    Ecosystem: Ecosystem
   }
 }
 </script>

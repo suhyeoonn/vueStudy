@@ -4,8 +4,12 @@
             <h1><a href="#">OPENKNOWL</a></h1>
             <nav>
                 <ul>
-                    <router-link to="/main">Vision</router-link>
-                    <router-link to="/login">Services</router-link>
+                    <li>
+                        <router-link to="/">Vision</router-link>
+                    </li>
+                    <li>
+                        <router-link to="/service">Services</router-link>
+                    </li>
                     <!-- <li>
                         <a href="/./vision" class="" title="오픈놀 비전">Vision</a>
                     </li>
@@ -13,8 +17,9 @@
                         <a href="/./services" class="router-link-exact-active router-link-active" title="오픈놀 서비스">Services</a>
                     </li> -->
                     <li>
-                        <a href="/./history" class="" title="오픈놀 연혁">History</a>
+                        <router-link to="/history">History</router-link>                    
                     </li>
+                    
                     <li>
                         <a href="/./recruit" class="" title="오픈놀 채용">Recruit</a>
                     </li>

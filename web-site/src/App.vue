@@ -1,30 +1,19 @@
 <template>
   <div id="app">
-    <Menu></Menu>        
-    <Main>
-      <router-view></router-view>
-    </Main>
+    <Menu/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import Menu from './components/Menu.vue'
-import Main from './components/Main.vue'
-
-var routes = [
-    { path: '/main', component: Main }    
-]
-
-var router = new VueRouter({        
-    routes
-})
+//import Main from './components/Main.vue'
 
 export default {
   name: 'app',
   components: {
-    Menu, Main
-  },
-  router
+    Menu
+  }
 }
 
 </script>
