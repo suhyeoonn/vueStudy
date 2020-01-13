@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Menu/>
-    <router-view></router-view>
+    <transition name="fade">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -33,7 +35,13 @@ body {
     font-size: 14px;
     color: #001b34;
 }
-#app {
-
+.fade-enter-active {
+    transition: all 1s;
+}
+.fade-enter {
+    opacity: 0;
+}
+.fade-enter-to {
+    opacity: 1;
 }
 </style>

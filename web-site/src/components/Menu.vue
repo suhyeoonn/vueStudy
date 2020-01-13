@@ -9,23 +9,17 @@
                     </li>
                     <li>
                         <router-link to="/service">Services</router-link>
-                    </li>
-                    <!-- <li>
-                        <a href="/./vision" class="" title="오픈놀 비전">Vision</a>
-                    </li>
-                    <li>
-                        <a href="/./services" class="router-link-exact-active router-link-active" title="오픈놀 서비스">Services</a>
-                    </li> -->
+                    </li>                    
                     <li>
                         <router-link to="/history">History</router-link>                    
                     </li>
                     
                     <li>
-                        <a href="/./recruit" class="" title="오픈놀 채용">Recruit</a>
+                        <router-link to="/recruit">Recruit</router-link>                         
                     </li>
-                    <li>
-                        <a href="/./contact" class="" title="오픈놀 문의">Contact</a>
-                    </li>
+                    <!-- <li>
+                        <router-link to="/contact">Contact</router-link>                         
+                    </li> -->
                 </ul>
             </nav>
         </header>
