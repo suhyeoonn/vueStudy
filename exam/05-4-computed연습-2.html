@@ -23,14 +23,14 @@
             el: '#app',
             data: {
                 code1: 'code_A_1',
-                code2: 'code_A_2'
+                code2: 'code_A_2'            
             },
             computed: {
-                codeNum1: function() {
-                    this.code1.split("_")[2]
+                codeNum1: function() {                    
+                    return this.code1.split("_")[2]
                 },
                 codeNum2: function() {
-                    this.code2.split("_")[2]
+                    return this.code2.split("_")[2]
                 }
             }     
         })
